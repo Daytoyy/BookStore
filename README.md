@@ -17,6 +17,7 @@
 
 3.需要手动创建数据库。
 
-管理员模式的首页展示如下
+
+管理员模式的首页展示如下：
 ![image](https://user-images.githubusercontent.com/84886371/166899815-5379ad07-9858-4d27-b656-37caa7212585.png)
 
