@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>我的订单</title>
+<link type="text/css" rel="stylesheet" href="/static/css/style.css" >
+<style type="text/css">
+
+</style>
+</head>
+<body>
+	
+	<div id="header">
+			<!-- <img class="logo_img" alt="" src="/static/img/logo.gif" > -->
+			<span class="wel_word">我的订单</span>
+			<div>
+				<span>欢迎<span class="um_span">{{.UserName}}</span>光临书城</span>
+				<a href="/getMyOrder">我的订单</a>
+				<a href="/logout">注销</a>&nbsp;&nbsp;
+				<a href="/main">返回</a>
+			</div>
+	</div>
+	
+	<div id="main">
+		{{if .Orders}}
+			<table>
+				<tr>
+					<th>单号</th>
+					<th>日期</th>
+					<th>数量</th>
+					<th>金额</th>
+					<th>详情</th>
+					<th>发货</th>
+				</tr>		
+			{{range .Orders}}
+				<tr>
+					<td>{{.OrderId}}</td>
+					<td>{{.CreateTime}}</td>
+					<td>{{.TotalCount}}</td>
+					<td>{{.TotalAmount}}</td>
+					<td><a href="/getOrderInfo?orderId={{.OrderId}}">查看详情</a></td>
+					<td class="state">
+						{{if .SendComplate}}
+							<a href="/takeOrder?orderId={{.OrderId}}&state=2">确认收货</a><br>
+							<a href="/takeOrder?orderId={{.OrderId}}&state=3">退款退货</a>
+						{{end}}
+						{{if .NoSend}}
+							等待发货
+						{{end}}	
+						{{if .Complate}}
+							交易完成
+						{{end}}
+						{{if .Cancel}}
+							订单取消
+						{{end}}
+					</td>
+				</tr>
+			{{end}}		
+			</table>
+		{{else}}
+			<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			<h1 style="text-align: center">您还没有买过东西，快去<a href="/main" style="color:red">购物</a>吧！</h1>
+		{{end}}
+	</div>
+	
+	<div id="bottom">
+		<span>
+			书城.Copyright &copy;2021
+		</span>
+	</div>
+</body>
+</html>
