@@ -2,7 +2,7 @@
 
 项目介绍：
 
-1.该项目基于尚硅谷GoWeb教程里的书城项目。（视频教程链接：https://www.bilibili.com/video/BV1nJ411D7P4 ）
+1.该项目使用 html 做前台页面显示，go 语言做后台开发，使用 mysql 数据库，为个人业余自学 go 时所写。（学习教程链接：https://www.bilibili.com/video/BV1nJ411D7P4 ）
 
 2.该项目实现了用户管理、图书管理、订单管理、购物车管理等功能。
 
